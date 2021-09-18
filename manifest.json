@@ -1,0 +1,27 @@
+{
+  "name": "Indeed Open In New Tab",
+  "description": "Opens new tab on indeed when clicking apply for job",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "icons": {},
+  "background": {
+    "scripts": ["./background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "<all_urls>",
+    "webRequest",
+    "webNavigation",
+    "webRequestBlocking",
+    "tabs",
+    "notifications",
+    "http://*/",
+    "https://*/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*.indeed.com/*", "https://*.indeed.com/*"],
+      "js": ["indeed.js"]
+    }
+  ]
+}
