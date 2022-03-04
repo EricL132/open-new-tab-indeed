@@ -1,27 +1,32 @@
 {
-  "name": "Indeed Open In New Tab",
-  "description": "Opens new tab on indeed when clicking apply for job",
-  "version": "1.0.0",
-  "manifest_version": 2,
-  "icons": {},
-  "background": {
-    "scripts": ["./background.js"],
-    "persistent": true
-  },
-  "permissions": [
-    "<all_urls>",
-    "webRequest",
-    "webNavigation",
-    "webRequestBlocking",
-    "tabs",
-    "notifications",
-    "http://*/",
-    "https://*/"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["http://*.indeed.com/*", "https://*.indeed.com/*"],
-      "js": ["indeed.js"]
+    "name": "Indeed Open In New Tab",
+    "description": "Opens new tab on indeed when clicking apply",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "icons": {
+      "16":"static/favicon.png",
+      "48": "static/favicon.png",
+      "128": "static/favicon.png"
+    },
+
+    "background": {
+        "scripts": ["./background.js"],
+        "persistent": true
+    },
+    "permissions": [
+        "<all_urls>",
+        "webRequest",
+        "webNavigation",
+        "webRequestBlocking",
+        "tabs",
+        "notifications",
+        "http://*/",
+        "https://*/",
+        "storage"
+    ],
+    "browser_action": {
+        "default_icon": "static/favicon.png",
+        "default_popup": "popup.html"
     }
-  ]
+
 }
